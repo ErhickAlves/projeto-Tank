@@ -5,7 +5,7 @@ using UnityEngine;
 public class TankMovement : MonoBehaviour
 {
     public float velocidade = 4f;
-    public GameObject tiro;
+    public GameObject bullet;
 
     private Rigidbody m_Rigidbody;
     private TankHealth m_TankHealth;
@@ -49,7 +49,7 @@ public class TankMovement : MonoBehaviour
             Vector3 rotation = transform.rotation.eulerAngles;
             rotation.y = -0.5f;
 
-            transform.Rotate(rotation * velocidade);
+            transform.Rotate(rotation * velocidade * 2);
         }
 
         if(Input.GetKey(KeyCode.D)) //Movimento para a direita
@@ -57,7 +57,7 @@ public class TankMovement : MonoBehaviour
             Vector3 rotation = transform.rotation.eulerAngles;
             rotation.y = 0.5f;
 
-            transform.Rotate(rotation * velocidade);
+            transform.Rotate(rotation * velocidade * 2);
         }
     }
 }

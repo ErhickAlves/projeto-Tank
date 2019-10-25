@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class TankShooting : MonoBehaviour
 {
+   
     public Rigidbody Bullet;
     public Transform Exit;
 
-    public float shotSpeed;
+    public float shotSpeed = 50f;
 
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            
+            Shoot();  
         }
     }
 

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projetil : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    private float timelimit = 3f;
+    public float velocidade;
+
+    public float timelimit = 3f;
     private float timer = 0;
 
     private Rigidbody m_Rigidbody;
@@ -13,8 +15,8 @@ public class Projetil : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        
-        if(timer >= timelimit)
+
+        if (timer >= timelimit)
         {
             timer = 0;
 
@@ -26,11 +28,16 @@ public class Projetil : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy");
+        Debug.Log("Nome do objeto: " + other.gameObject.name);
+        if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.SetActive(false);
 
-            
+
+
         }
+
+
+
     }
 }
